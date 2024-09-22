@@ -156,7 +156,7 @@
 
 6. **高亮区域提取和处理**：
 
-   - 二值化（阈值设置为200-255）：
+   - 二值化（阈值设置为 200-255）：
 
      ```cpp
      threshold(gray_image, binary_image, 200, 255, THRESH_BINARY);
@@ -184,29 +184,29 @@
      warpAffine(image, rotated_image, rotation_matrix, image.size());
      ```
 
-   - 旋转35度（无损）:
+   - 旋转 35 度（无损）:
 
      通过三角函数计算旋转后的图像尺寸：
-     
+
      ```cpp
      double radians = 35 * CV_PI / 180.0;
      int new_width = static_cast<int>(image.cols * std::abs(std::cos(radians)) + image.rows * std::abs(std::sin(radians)));
      int new_height = static_cast<int>(image.cols * abs(sin(radians)) + image.rows * abs(cos(radians)));
      ```
-     
+
      调整旋转矩阵中的平移参数，使旋转后的图像居中，避免被裁剪：
-     
+
      ```cpp
      rotation_matrix.at<double>(0, 2) += (new_width - image.cols) / 2.0;
      rotation_matrix.at<double>(1, 2) += (new_height - image.rows) / 2.0;
      ```
-     
+
      ```cpp
      warpAffine(image, rotated_image_lossless, rotation_matrix, Size(new_width, new_height));
      ```
-     
+
    - 裁剪左上角 1/4：
-   
+
      ```cpp
      Rect roi(0, 0, new_width, new_height);
      Mat cropped_image = image(roi);
@@ -225,7 +225,7 @@
      ```
 
    - 叠加结果，再次绘制图形，作为图形实体：
-   
+
      ```cpp
      addWeighted(image, 1.0, glow, 1.0, 0, result);
      rectangle(glow_image, ...);
@@ -278,11 +278,7 @@
 
 - **绘制函数**：`paint_box` 接受图像、面积阈值、轮廓和重叠率作为参数，返回绘制了 bounding box 的图像。
 
-
-
-#### 在完成任务时，先略读了一下OpenCV的官方文档和Tutorial，每遇到一个不清楚的问题网上查找对应实现方式，再回文档学习相关函数，自己根据任务进行应用、反复调整。
-
-
+#### 在完成任务时，先略读了一下 OpenCV 的官方文档和 Tutorial，每遇到一个不清楚的问题网上查找对应实现方式，再回文档学习相关函数，自己根据任务进行应用、反复调整以达到最好的效果。
 
 ## 结果展示
 
@@ -362,12 +358,10 @@
 
 通过本次任务，我熟悉了 OpenCV 中常用的图像处理操作，包括颜色空间转换、滤波、轮廓检测、形态学操作、图形绘制和图像变换等。学会了如何组合使用这些操作来完成复杂的图像处理任务。同时，对图像中目标的提取和处理有了更深入的理解，为后续更高级的图像处理和计算机视觉任务打下了坚实的基础。
 
-
-
 ## 附
 
-### RM Logo绘制（logo_painting.cpp）
+### RM Logo 绘制（logo_painting.cpp）
 
-首先使用hough_line直线检测算法检测出RM Logo中的线段并获得端点坐标，然后基于坐标连接绘制直线、半圆形成轮廓，然后提取logo主体的边界轮廓，并在轮廓内，基于像素点横坐标计算渐变颜色并逐像素点上色形成渐变效果。
+首先使用 hough_line 直线检测算法检测出 RM Logo 中的线段并获得端点坐标，然后基于坐标连接绘制直线、半圆形成轮廓，然后提取 logo 主体的边界轮廓，并在轮廓内，基于像素点横坐标计算渐变颜色并逐像素点上色形成渐变效果。
 
 ![robomaster_logo](resources/robomaster_logo.png)
