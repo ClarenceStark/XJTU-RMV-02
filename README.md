@@ -221,7 +221,7 @@
      ```cpp
      rectangle(glow_image, ...);
      circle(glow_image, ...);
-    GaussianBlur(glow_image, glow, Size(ksize, ksize), 0, 0);
+   GaussianBlur(glow_image, glow, Size(ksize, ksize), 0, 0);
      ```
 
    - 叠加结果，再次绘制图形，作为图形实体：
@@ -229,7 +229,7 @@
      ```cpp
      addWeighted(image, 1.0, glow, 1.0, 0, result);
      rectangle(glow_image, ...);
-      circle(glow_image, ...);
+     circle(glow_image, ...);
      ```
 
 2. **绘制文字并添加效果**：
@@ -282,67 +282,67 @@
 
 终端运行结果截图：
 
-<img src="resources/terminal_1.png" alt="terminal_1" style="zoom:50%;" />
+<img src="resources/terminal_1.png" alt="terminal_1" style="zoom:20%;" />
 
-<img src="resources/terminal_2.png" alt="terminal_2" style="zoom:50%;" />
+<img src="resources/terminal_2.png" alt="terminal_2" style="zoom:20%;" />
 
 处理后的图像均已保存至 `../resources/` 目录，包括：
 
 - `gray_image.png`
 
-  <img src="resources/gray_image.png" alt="gray_image" style="zoom:25%;" />
+  <img src="resources/gray_image.png" alt="gray_image" style="zoom:15%;" />
 
 - `hsv_image.png`
 
-  <img src="resources/hsv_image.png" alt="hsv_image" style="zoom:25%;" />
+  <img src="resources/hsv_image.png" alt="hsv_image" style="zoom:15%;" />
 
 - `mean_blur.png`
 
-  <img src="resources/mean_blur.png" alt="mean_blur" style="zoom:25%;" />
+  <img src="resources/mean_blur.png" alt="mean_blur" style="zoom:15%;" />
 
 - `gaussian_blur.png`
 
-  <img src="resources/gaussian_blur.png" alt="gaussian_blur" style="zoom:25%;" />
+  <img src="resources/gaussian_blur.png" alt="gaussian_blur" style="zoom:15%;" />
 
 - `red_mask.png`
 
-  <img src="resources/red_mask.png" alt="red_mask" style="zoom:25%;" />
+  <img src="resources/red_mask.png" alt="red_mask" style="zoom:15%;" />
 
 - `highlight_regions.png`
 
-  <img src="resources/highlight_regions.png" alt="highlight_regions" style="zoom:25%;" />
+  <img src="resources/highlight_regions.png" alt="highlight_regions" style="zoom:15%;" />
 
 - `contour_image.png`
 
-  <img src="resources/contour_image.png" alt="contour_image" style="zoom:25%;" />
+  <img src="resources/contour_image.png" alt="contour_image" style="zoom:15%;" />
 
 - `bounding_box_image.png`
 
-  <img src="resources/bounding_box_image.png" alt="bounding_box_image" style="zoom:25%;" />
+  <img src="resources/bounding_box_image.png" alt="bounding_box_image" style="zoom:15%;" />
 
 - `dilated_image.png`
 
-  <img src="resources/dilated_image.png" alt="dilated_image" style="zoom:25%;" />
+  <img src="resources/dilated_image.png" alt="dilated_image" style="zoom:15%;" />
 
 - `eroded_image.png`
 
-  <img src="resources/eroded_image.png" alt="eroded_image" style="zoom:25%;" />
+  <img src="resources/eroded_image.png" alt="eroded_image" style="zoom:15%;" />
 
 - `filled_image.png`
 
-  <img src="resources/filled_image.png" alt="filled_image" style="zoom:25%;" />
+  <img src="resources/filled_image.png" alt="filled_image" style="zoom:15%;" />
 
 - `rotated_image.png`
 
-  <img src="resources/rotated_image.png" alt="rotated_image" style="zoom:25%;" />
+  <img src="resources/rotated_image.png" alt="rotated_image" style="zoom:15%;" />
 
 - `rotated_image_lossless.png`
 
-  <img src="resources/rotated_image_lossless.png" alt="rotated_image_lossless" style="zoom:25%;" />
+  <img src="resources/rotated_image_lossless.png" alt="rotated_image_lossless" style="zoom:15%;" />
 
 - `cropped_image.png`
 
-  <img src="resources/cropped_image.png" alt="cropped_image" style="zoom:25%;" />
+  <img src="resources/cropped_image.png" alt="cropped_image" style="zoom:15%;" />
 
 - `rectangle_circle_text.png`
 
