@@ -69,8 +69,8 @@
 
 - **无损旋转**：通过计算旋转后图像可能需要的最大宽度和高度，并相应调整旋转矩阵的平移量，来实现无损旋转。旋转后的图像尺寸根据角度计算如下：
 
-  - 旋转后图像的宽度： $new\_width = |W \cdot \cos(\theta)| + |H \cdot \sin(\theta)|$
-  - 旋转后图像的高度： $new\_height = |W \cdot \sin(\theta)| + |H \cdot \cos(\theta)|$
+  - 旋转后图像的宽度： $new\\_width = |W \cdot \cos(\theta)| + |H \cdot \sin(\theta)|$
+  - 旋转后图像的高度： $new\\_height = |W \cdot \sin(\theta)| + |H \cdot \cos(\theta)|$
 
   然后通过调整旋转矩阵中的平移部分，确保图像内容在旋转后居中，避免被裁剪。
 
