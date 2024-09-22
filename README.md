@@ -221,7 +221,7 @@
      ```cpp
      rectangle(glow_image, ...);
      circle(glow_image, ...);
-   GaussianBlur(glow_image, glow, Size(ksize, ksize), 0, 0);
+     GaussianBlur(glow_image, glow, Size(ksize, ksize), 0, 0);
      ```
 
    - 叠加结果，再次绘制图形，作为图形实体：
